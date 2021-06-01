@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron bg-light">
+    <div class="container">
+      <h1 class="display-4"><a href="{% url 'list' %}" class="text-primary text-decoration-none">ブログ</a></h1>
+      <p class="lead">新規作成画面です。</p>
+    </div>
+  </div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="POST">{% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="作成する">
+    </form>
+</div>
+{% endblock content %}
